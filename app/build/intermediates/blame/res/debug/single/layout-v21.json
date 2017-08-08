@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/layout-v21/notification_action_tombstone.xml"
+    }
+]
