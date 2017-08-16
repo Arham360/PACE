@@ -49,6 +49,7 @@ public class LocalData {
                         String text = ag.getString("text");
                         Age age = new Age(id,text);
                         ageList.add(age);
+                        Log.v("FUN", "Success age" + response.toString());
                     }
 
                     for (int b = 0; b<cases.length(); b++){
@@ -56,14 +57,15 @@ public class LocalData {
                         JSONObject ca = ages.getJSONObject(b);
                         int id = ca.getInt("id");
                         String text = ca.getString("text");
-                        String description = ca.getString("description");
+                        //String description = ca.getString("description");
                         int age = ca.getInt("ages");
                         JSONArray img = ca.getJSONArray("images");
                         String image = img.getString(0);
-                        Case c = new Case(id,text,description,age,image);
+                        Case c = new Case(id,text,age,image);
                         caseList.add(c);
-
+                        Log.v("FUN", "Success case" + response.toString());
                     }
+
 
                     for (int i = 0; i < options.length(); i++) {
                         JSONObject obj = options.getJSONObject(i);
@@ -87,6 +89,7 @@ public class LocalData {
                         }
                         Option option = new Option(id, text, age, type, parent, c, op, caption);
                         optionsList.add(option);
+                        Log.v("FUN", "Success option" + response.toString());
                     }
 
 

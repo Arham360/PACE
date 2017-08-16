@@ -12,10 +12,10 @@ public class Case {
     int age;
     String image;
 
-    public Case(int id, String text, String desc,int age, String image) {
+    public Case(int id, String text,int age, String image) {
         this.id = id;
         this.text = text;
-        this.desc = desc;
+        this.age = age;
         this.image = image;
     }
 

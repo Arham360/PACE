@@ -1,7 +1,7 @@
-#Tue Aug 08 11:14:57 CDT 2017
-base.0=/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ae15ba95731f80a17a626207285cb9332eeccb9b
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a78b1a269c978df5633a5291f116f3242b25c6ac/classes.dex
-base.1=/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a78b1a269c978df5633a5291f116f3242b25c6ac
-file.0=/Users/arhamakbar/Desktop/Pace App/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ae15ba95731f80a17a626207285cb9332eeccb9b/classes.dex
+#Wed Aug 16 11:44:22 CDT 2017
+base.0=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bfecaaf1f0ffd3990cfde245f50b3374f9f39dbb
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4ac532b69e6b507f77f52d953f3fe4debf96aa37/classes.dex
+base.1=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4ac532b69e6b507f77f52d953f3fe4debf96aa37
+file.0=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bfecaaf1f0ffd3990cfde245f50b3374f9f39dbb/classes.dex

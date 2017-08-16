@@ -7,11 +7,14 @@
 
     <Button
         android:id="@+id/button"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/PaceTheme"
+        android:padding="10dp"
         android:text="Button" />
 </RelativeLayout>

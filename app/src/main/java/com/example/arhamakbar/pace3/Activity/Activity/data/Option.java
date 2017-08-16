@@ -13,11 +13,11 @@ public class Option {
     String caption;
     int age;
     int type;
-    int parent;
+    Integer parent;
     int[] cases;
     int[] options;
 
-    public Option(int id, String text, int age, int type, int parent, int[] cases, int[] options,String caption) {
+    public Option(int id, String text, int age, int type, Integer parent, int[] cases, int[] options,String caption) {
         this.id = id;
         this.text = text;
         this.age = age;
@@ -25,6 +25,7 @@ public class Option {
         this.parent = parent;
         this.cases = cases;
         this.options = options;
+        this.caption =caption;
     }
 
     public int getId() {
