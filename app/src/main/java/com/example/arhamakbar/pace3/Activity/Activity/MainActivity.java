@@ -1,6 +1,7 @@
 package com.example.arhamakbar.pace3.Activity.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -21,6 +22,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.arhamakbar.pace3.Activity.Activity.data.Age;
 import com.example.arhamakbar.pace3.Activity.Activity.data.Case;
+import com.example.arhamakbar.pace3.Activity.Activity.data.DatabaseHandler;
 import com.example.arhamakbar.pace3.Activity.Activity.data.Option;
 import com.example.arhamakbar.pace3.R;
 
@@ -37,24 +39,33 @@ public class MainActivity extends AppCompatActivity {
     final List<Age> ageList = new ArrayList<Age>();
     // public List<Type> typeList;
     final List<Case> caseList = new ArrayList<Case>();
+    DatabaseHandler databaseHandler;
+    public static final String MY_PREFS_NAME = "MyPrefsFile";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        databaseHandler = new DatabaseHandler(this);
 
-        init();
-        //todo make init into boolean so you can check if it passed or not and display toast if not
-        //todo put conditions around init to check if you wanna update it soon.
-        //save date into systems preferences and then compare if you wanna update it or not i guess
-        //ask joel or chris
+
+        SharedPreferences sharedPreferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        boolean first = sharedPreferences.getBoolean("first", true);
+        if (first) {
+            init();
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("first", false);
+            editor.commit();
+        }
+
+
 
         String title = "P.A.C.E ";
         ActionBar ab = getSupportActionBar();
         ab.setTitle(title);
         ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF497FFD")));
-        //ab.setBackgroundDrawable(new ColorDrawable(0x0000ff));
+
         Button b1,b2,b3,b4,b5,b6;
         b1 = (Button)findViewById(R.id.b1);
         b2 = (Button)findViewById(R.id.b2);
@@ -228,7 +239,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                         }Log.v("FUN", "Success option");
-                        SQLwrite();
+                       try {
+                           SQLwrite();
+                       }catch (Exception e) {
+
+                       }
                     }catch (Exception e) {
                         Log.v("FUN", "Failed options"+ e.getLocalizedMessage());
 
@@ -252,96 +267,27 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-//
+
         Volley.newRequestQueue(this).add(jsonObjectRequest);
 
     }
 
     protected void SQLwrite (){
-
         try{
+            for (int i = 0; i<ageList.size();i++){
+
+                Log.v("fun",ageList.get(i).getId() +" " + ageList.get(i).getText());
+
+            }
             Log.v("SQL","starting database");
-            SQLiteDatabase mydatabase = this.openOrCreateDatabase("LocalData", MODE_PRIVATE, null);
-            mydatabase.execSQL("CREATE TABLE IF NOT EXISTS age (id INTEGER, t TEXT);");
 
-            try {
-                int ageNum = ageList.size();
+            databaseHandler.addAges(ageList);
 
-                for (int d = 0; d < ageNum; d++) {
-                    //open transaction stream
-                    mydatabase.beginTransaction();
-                    int j = ageList.get(d).getId();
-                    String k = ageList.get(d).getText();
-                    mydatabase.execSQL("INSERT INTO age (id,t) VALUES (" + j + ",'" +  k + "');");
-                   // Log.v("SQL", "inserting ages to database");
-                }Log.v("SQL", "success ages database");
-            }catch (Exception e){
-                Log.v("SQL","failed ages");
-            }
-            mydatabase.endTransaction();
-            //close transaction stream
-
-            try{
-                int caseNum = caseList.size();
-                mydatabase.execSQL("CREATE TABLE IF NOT EXISTS ca (id INTEGER, age INTEGER, text TEXT, image TEXT);");
-                for (int d = 0; d<caseNum; d++){
-                    mydatabase.beginTransaction();
-
-                    int a = caseList.get(d).getId();
-                    int b = caseList.get(d).getAge();
-                    String c = caseList.get(d).getDesc();
-                    String e = caseList.get(d).getText();
-                    String f = caseList.get(d).getImage();
-                    mydatabase.execSQL("INSERT INTO ca (id,age,text,image) VALUES ("+a+","+b+",'"+e +"','"+f+  "');");
-                   // Log.v("SQL", "inserting cases to database");
-                }Log.v("SQL", "success cases DB");
-            }catch (Exception e){
-                Log.v("SQL","failed cases");
-            }
-
-            mydatabase.endTransaction();
-
-            try {
-
-                int optionsNum = optionsList.size();
-                mydatabase.execSQL("CREATE TABLE IF NOT EXISTS option (id INTEGER, age INTEGER, type INTEGER,  parent INTEGER, text TEXT, caption TEXT, options TEXT, cases TEXT);");
-                for (int d = 0; d < optionsNum; d++) {
-                    mydatabase.beginTransaction();
-                    int a = optionsList.get(d).getId();
-                    int age = optionsList.get(d).getAge();
-                    int type = optionsList.get(d).getType();
-                    int parent = optionsList.get(d).getParent();
-                    String t = optionsList.get(d).getText();
-                    String caption = optionsList.get(d).getCaption();
-                    String options = "";
-                    int [] op = optionsList.get(d).getOptions();
-                    for (int i = 0; i < op.length; i++){
-                        options += op[i] + ",";
-                        //Log.v("OPTIONS","currently on " + options + t + a);
-
-                    }
-                    Log.v("OPTIONS","success options");
-                    String cas = "";
-                    int [] ca = optionsList.get(d).getCases();
-                    for (int i = 0; i < ca.length; i++){
-                        cas += ca[i] + ",";
-                        //Log.v("OPTIONS","adding" + cas);
-                    }
-                    Log.v("OPTIONS","success cases");
-
-                    mydatabase.execSQL("INSERT INTO option (id,age,type,parent,text,caption,options,cases) VALUES (" + a + "," + age + "," + type + "," + parent + ",'" + t + "','" + caption + "','"+ options + "','"+ cas + "' );");
-                    //Log.v("SQL", "inserting options to database");
-                }
-                Log.v("DB","Ending transaction");
-                mydatabase.endTransaction();
-                Log.v("DB","CLosing DB");
-                mydatabase.close();
-
-                Log.v("DB","Db closed!");
-
-            }catch (Exception e){
-                Log.v("SQL","failed options");
-            }
+            Log.v("OPTIONS","ADDING TO DATABASE");
+            databaseHandler.addOptions(optionsList);
+            Log.v("OPTIONS","ADDED TO DATABASE");
+            databaseHandler.addCases(caseList);
+            Log.v("Cases","ADDED TO DATABASE");
 
         }catch (Exception e){
             Log.v("Prob",""+e.getLocalizedMessage());

@@ -24,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.arhamakbar.pace3.Activity.Activity.data.Age;
 import com.example.arhamakbar.pace3.Activity.Activity.data.Case;
+import com.example.arhamakbar.pace3.Activity.Activity.data.DatabaseHandler;
 import com.example.arhamakbar.pace3.Activity.Activity.data.LocalData;
 import com.example.arhamakbar.pace3.Activity.Activity.data.Option;
 
@@ -41,70 +42,37 @@ import java.util.List;
 
 public class Activity2 extends AppCompatActivity {
 
-    List<Option> optionsList = new ArrayList<Option>();
-//    final List<Age> ageList = new ArrayList<Age>();
-//    // public List<Type> typeList;
-//    final List<Case> caseList = new ArrayList<Case>();
+    DatabaseHandler databaseHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
-
+        databaseHandler = new DatabaseHandler(this);
         Intent intent = getIntent();
         //int id = Integer.parseInt(intent.getStringExtra("id"));
         int age = intent.getIntExtra("id", -1);
         String title = intent.getStringExtra("title");
 
+
+
         if (age <1 || age > 6){
             Log.v("FUN","ERROR");
         }
-        Log.v("SQl", "opening the database for read");
-        SQLiteDatabase database = this.openOrCreateDatabase("LocalData",MODE_APPEND,null);
-        Log.v("SQl", "opened database");
-        Cursor c = database.rawQuery("SELECT * FROM option WHERE age = "+ age + "AND type = 1",null);
-        Log.v("SQl", "cursor got data");
-       // List itemIds = new ArrayList<>();
-        c.moveToFirst();
-        while (c!=null){
 
-            int id = c.getInt(c.getColumnIndexOrThrow("id"));
-            Log.v("2", ""+id);
-            int parent  = c.getInt(c.getColumnIndexOrThrow("id"));
-            int a  = c.getInt(c.getColumnIndexOrThrow("id"));
-            int type  = c.getInt(c.getColumnIndexOrThrow("id"));
-            String t = c.getString(c.getColumnIndexOrThrow("id"));
-            String caption = c.getString(c.getColumnIndexOrThrow("caption"));
-            String options = c.getString(c.getColumnIndexOrThrow("options"));
-            String  [] op = options.split(",");
-            int [] optionsList = new int[op.length] ;
-            for (int i = 0; i < op.length; i++){
-                optionsList[i] = Integer.parseInt(op[i]);
-                Log.v("PULLING", ""+optionsList[i]);
-            }
-            for (int i = 0; i < op.length; i++){
-                optionsList[i] = Integer.parseInt(op[i]);
-                Log.v("PULLING", ""+optionsList[i]);
-            }
-
-
-            //Option option = new Option(id,t,a,type,parent,);
-          //  optionsList.add();
-            c.moveToNext();
-        }
 
 
         FragmentManager fm  = getSupportFragmentManager();
         Primary mainFragment = (Primary) fm.findFragmentById(R.id.buttonFragment);
 
         if (mainFragment == null){
-            //do not send in age, send in options
-            mainFragment = Primary.newInstance( age  ,title);
+
+            ArrayList<String> initial = new ArrayList<>();
+            initial.add("Options List (Do not touch)");
+            //TODO make this untouchable
+            mainFragment = Primary.newInstance( age  ,title, true ,initial);
             fm.beginTransaction().add(R.id.buttonFragment,mainFragment).commit();
 
-        } else{
-            //this means youre past the first symptom page
-            //fm.beginTransaction().add(R.id.buttonFragment,mainFragment).addToBackStack().commit();
         }
 
 
@@ -116,8 +84,21 @@ public class Activity2 extends AppCompatActivity {
         ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF497FFD")));
     }
 
-    //TODO UPDATE UI METHOD CALLED FROM WITHIN FRAGMENT
-    //update UI how?????????????????
+    public void makeNewFragment(int age, String newTitle, ArrayList<String> listViewItems){
+        FragmentManager fm  = getSupportFragmentManager();
+        Primary mainFragment = (Primary) fm.findFragmentById(R.id.buttonFragment);
+        mainFragment = Primary.newInstance( age  ,newTitle, false, listViewItems);
+        fm.beginTransaction().replace(R.id.buttonFragment,mainFragment).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+    }
+
+
+
 
     @Override
     protected void onStart() {

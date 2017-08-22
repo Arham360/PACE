@@ -1,8 +1,16 @@
 package com.example.arhamakbar.pace3.Activity.Fragment;
 
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +22,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.arhamakbar.pace3.Activity.Activity.Activity2;
+import com.example.arhamakbar.pace3.Activity.Activity.data.DatabaseHandler;
+import com.example.arhamakbar.pace3.Activity.Adapter.DataAdapter;
 import com.example.arhamakbar.pace3.R;
 
 import java.util.ArrayList;
@@ -32,11 +42,23 @@ public class Primary extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private final String defaultt = "What is the patient's primary symptom?";
+    private static final String ARG_PARAM3 = "param3";
+    private static final String ARG_PARAM4 = "param4";
 
+    DatabaseHandler databaseHandler;
+    SharedPreferences shared;
+
+    List<String> myItems = new ArrayList<String>();
+    ArrayAdapter<String> adapter;
+    ListView listView;
+
+    LinearLayout LinearLayout;
     // TODO: Rename and change types of parameters
     private int mParam1;
     private String mParam2;
+    private boolean mParam3;
+    private ArrayList<String> mParam4;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -53,11 +75,14 @@ public class Primary extends Fragment {
      * @return A new instance of fragment Primary.
      */
     // TODO: Rename and change types and number of parameters
-    public static Primary newInstance(int param1, String param2) {
+    public static Primary newInstance(int param1, String param2, boolean param3, ArrayList<String> param4) {
         Primary fragment = new Primary();
         Bundle args = new Bundle();
-        args.putDouble(ARG_PARAM1, param1);
+        args.putInt(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        args.putBoolean(ARG_PARAM3,param3);
+        //args.putStringArray(ARG_PARAM4,param4);
+        args.putStringArrayList(ARG_PARAM4,param4);
         fragment.setArguments(args);
         return fragment;
     }
@@ -65,10 +90,20 @@ public class Primary extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        databaseHandler = new DatabaseHandler(getActivity());
+
         if (getArguments() != null) {
             mParam1 = getArguments().getInt(ARG_PARAM1);
+            Log.v("PARAM1",""+mParam1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            Log.v("PARAM2",""+mParam2);
+            mParam3 = getArguments().getBoolean(ARG_PARAM3);
+            Log.v("PARAM3",""+mParam3);
+            mParam4 = getArguments().getStringArrayList(ARG_PARAM4);
+            Log.v("PARAM3",""+mParam4);
         }
+
+
 
     }
 
@@ -77,53 +112,86 @@ public class Primary extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootview = inflater.inflate(R.layout.fragment_primary, container, false);
-        List<String> myItems = new ArrayList<String>();
-        myItems.add("Select Age Range");
+        Log.v("LIST", mParam4.toString());
+        try {
+            if (mParam4.get(mParam4.size() - 1).equals(mParam4.get(mParam4.size() - 3))) {
+                Log.v("GOTEM", "just delete the two in the middle");
+                mParam4.remove(mParam4.size()-1);
+                mParam4.remove(mParam4.size()-1);
+                super.onCreateView(inflater,container,savedInstanceState);
+            } else {
+                Log.v("Size small", "dont do nothin");
+            }
+        }catch (Exception e){
+
+        }
+        for (int i = 0 ; i< mParam4.size();i++) {
+            myItems.add(mParam4.get(i));
+        }
         myItems.add(mParam2);
+        mParam4.add(mParam2);
+        Log.v("check ID",""+mParam1);
         ((Activity2) getActivity()).setActionBarTitle(mParam2);
-        //should be recursive
 
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
+        LinearLayout = (LinearLayout) rootview.findViewById(R.id.buttonContainer);
+//        LinearLayout.setAlignmentMode(LinearLayout.ALIGN_BOUNDS);
+//        LinearLayout.setColumnCount(2);
+//        LinearLayout.setRowCount(3);
 
-        TextView textView = (TextView) rootview.findViewById(R.id.textView);
+        if(mParam3 == true) {
+            createOptionsByAge(mParam1);
+        }else{
+
+            if(databaseHandler.getCaseFromOption(mParam1).size()>0){
+
+            }
+
+            createOptionsByID(mParam1);
+        }
+
+        String captionText = databaseHandler.getCaptionTextById(mParam1);
+        if (captionText.equals("")){
+            captionText = "What is the patient's primary Symptom?";
+        }
+        TextView textView = (TextView) rootview.findViewById(R.id.captionView);
+        textView.setText(captionText);
         //check if caption length is greater than zero, if so, set that to textview else default
 
 
 
-        ListView listView = (ListView) rootview.findViewById(R.id.backStackList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.backlistcard, myItems);
+        listView = (ListView) rootview.findViewById(R.id.backStackList);
+        adapter = new ArrayAdapter<String>(getActivity(), R.layout.backlistcard, myItems);
         listView.setAdapter(adapter);
+        scrollMyListViewToBottom();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView t = (TextView) view;
-                //add that mparam2 into the listView as well and make it unclickable
-                //add listeners to all members of the listview and give them id
-                //poptobackstack with id when pressed
+
+                if (position == 0){
+                    ((Activity2)getActivity()).finish();
+                }
+                FragmentManager fm = getFragmentManager();
+                fm.popBackStack(position+1, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
+
+                //TODO WORK ON BACKSTACK FUNCTIONALITY WITH JOEL
             }
         });
 
 
 
-        LinearLayout linearLayout = (LinearLayout) rootview.findViewById(R.id.buttonContainer);
 
 
-        //TODO add buttons programitally with the data provided
-       // for (all instances of ){
-//        Button myButton = new Button(getContext(),null,R.layout.small_button);
-//        myButton.setText(i.getText);
-//        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-//        linearLayout.addView(myButton, lp);
 
-       // }
-
-        //set clicklisteners to the button
-        //when pressed, take that button id and text, pass it back to the activity and then call updateUI method
 
 
         return rootview;
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -132,19 +200,113 @@ public class Primary extends Fragment {
         }
     }
 
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
+//
+
+    public void createOptionsByAge (int age){
+        final ArrayList<Integer> arrayList;
+
+
+        arrayList = databaseHandler.getInitialOptionByAge(age);
+        Log.v("ARRAY",""+arrayList.toString()+"      " + arrayList.size());
+        for (int i = 0 ; i< arrayList.size(); i++){
+
+            final Button myButton1 = new Button(getContext());
+            final int a =i ;
+            //myButton1.setBackgroundResource(R.drawable.rounded_corners);
+            myButton1.setPadding(5,0,5,0);
+           // myButton1.setBackgroundColor(0xFF497FFD);
+           // myButton1.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF497FFD")));
+            final String text = databaseHandler.getOptionTextById(arrayList.get(i));
+            myButton1.setText(text);
+            //myButton1.setTextColor(0xffffff);
+            GradientDrawable gd = new GradientDrawable();
+            gd.setColor(0xFF497FFD); // Changes this drawbale to use a single color instead of a gradient
+            gd.setCornerRadius(20);
+            gd.setStroke(1, 0xFF000000);
+            myButton1.setBackgroundDrawable(gd);
+//
+             myButton1.setOnClickListener(new View.OnClickListener(){
+                 @Override
+                 public void onClick(View view) {
+
+                     //get activity and make new fragment? add it to backstack?
+                     ((Activity2) getActivity()).makeNewFragment(arrayList.get(a), text, mParam4);
+
+                 }
+             });
+
+            LinearLayout.addView(myButton1);
+
+        }
+
+    }
+
+    private void scrollMyListViewToBottom() {
+        listView.post(new Runnable() {
+            @Override
+            public void run() {
+                // Select the last row so it will scroll into view...
+                listView.setSelection(adapter.getCount() - 1);
+                // =listView.getItemAtPosition(adapter.getCount());
+                //TODO CHANGE COLOR FOR LAST ONE
+            }
+        });
+    }
 
 
 
+    public void createOptionsByID (int id){
+        final ArrayList<Integer> arrayList;
+
+        //Log.v("TRY",databaseHandler.getOptionTextById(900));
+        arrayList = databaseHandler.getOptionById(id);
+        Log.v("ARRAY",""+arrayList.toString()+"      " + arrayList.size());
+        for (int i = 0 ; i< arrayList.size(); i++){
+
+            Button myButton1 = new Button(getContext());
+            final int a =i ;
+            //myButton1.setBackgroundResource(R.drawable.rounded_corners);
+
+            //Button myButton2 = new Button(getContext(),null,R.layout.small_button);
+            //Log.v("getText", databaseHandler.getOptionTextById(i));
+            final String text = databaseHandler.getOptionTextById(arrayList.get(i));
+            myButton1.setText(text);
+
+//            LinearLayout.LayoutParams param =new LinearLayout.LayoutParams();
+//            param.height = android.widget.LinearLayout.LayoutParams.MATCH_PARENT;
+//            param.width = android.widget.LinearLayout.LayoutParams.MATCH_PARENT;
+//            param.rightMargin = 5;
+//            param.topMargin = 5;
+//            param.setGravity(Gravity.CENTER);
+//            param.columnSpec = LinearLayout.spec(90);
+//            param.rowSpec = LinearLayout.spec(100);
+//            myButton1.setLayoutParams (param);
+            // Log.v("getText", databaseHandler.getOptionTextById(i));
+            myButton1.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view) {
+
+                    //get activity and make new fragment? add it to backstack?
+                    ((Activity2) getActivity()).makeNewFragment(arrayList.get(a), text, mParam4);
+
+                }
+            });
+
+            LinearLayout.addView(myButton1);
+
+        }
+
+    }
+
+    public void popFromList(ArrayList arrayList){
+        arrayList.remove(arrayList.size());
+    }
+
+    @Override
+    public void onPause() {
+        myItems.clear();
+        super.onPause();
+    }
 
     @Override
     public void onDetach() {

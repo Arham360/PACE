@@ -30,6 +30,7 @@
         </activity>
         <activity android:name="com.example.arhamakbar.pace3.Activity.Activity.Activity2" />
         <activity android:name="com.example.arhamakbar.pace3.Activity.Activity.ImageBank" />
+        <activity android:name="com.example.arhamakbar.pace3.Activity.Activity.CasesActivity" />
     </application>
 
 </manifest>

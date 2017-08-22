@@ -14,36 +14,23 @@ import java.util.List;
  */
 
 public class ImageBankModel {
-    private String name;
-    final String DRAWABLE = "drawable/";
-    private String path;
-    private int img;
+    private String DiseaseName = "";
+    private String DiseaseURL = "" ;
 
-    public ImageBankModel(String name, int img) {
-        this.name = name;
-
-        this.img = img;
+    public String getDiseaseName() {
+        return DiseaseName;
     }
 
-    public String getName() {
-        return name;
-    }
-    public String getPath(){
-        return DRAWABLE+path;
+    public void setDiseaseName(String diseaseName) {
+        DiseaseName = diseaseName;
     }
 
-    public int getImage(){
-        return img;
+    public String getDiseaseURL() {
+        return DiseaseURL;
     }
 
-    public static List<ImageBankModel> dummyData() {
-        List<ImageBankModel> list = new ArrayList<>();
-
-        ImageBankModel a = new ImageBankModel("Adrenal Mass Nueroblastoma", R.drawable.amn);
-        list.add(a);
-
-        return list;
+    public void setDiseaseURL(String diseaseURL) {
+        DiseaseURL = diseaseURL;
     }
-
 }
 

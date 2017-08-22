@@ -6,11 +6,24 @@ package com.example.arhamakbar.pace3.Activity.Activity.data;
 
 public class Case {
 
-     int id;
-    String text;
-    String desc;
-    int age;
-    String image;
+    static final String TABLE_NAME = "CAS";
+    static final String COLUMN_ID = "ID";
+    static final String COLUMN_TEXT = "TEXT";
+    static final String COLUMN_DESC = "DESC";
+    static final String COLUMN_AGE = "AGE";
+    static final String COLUMN_IMAGE = "IMAGE";
+    static final String COLUMNS = "(" + COLUMN_ID + " INTEGER PRIMARY KEY,"
+                                        + COLUMN_TEXT + " TEXT,"
+                                        + COLUMN_DESC + " TEXT,"
+                                        + COLUMN_AGE + " INTEGER,"
+                                        + COLUMN_IMAGE + " TEXT)";
+
+
+    private int id;
+    private String text;
+    private String desc;
+    private int age;
+    private String image;
 
     public Case(int id, String text,int age, String image) {
         this.id = id;

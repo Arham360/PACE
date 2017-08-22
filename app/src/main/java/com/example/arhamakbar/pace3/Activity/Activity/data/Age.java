@@ -6,9 +6,15 @@ package com.example.arhamakbar.pace3.Activity.Activity.data;
 
 public class Age {
 
-    int id;
-    String text;
+    static final String TABLE_NAME = "AGE";
+    static final String COLUMN_ID = "ID";
+    static final String COLUMN_TEXT = "TEXT";
+    static final String COLUMNS = "(" + COLUMN_ID + " INTEGER PRIMARY KEY,"
+                                        + COLUMN_TEXT + " TEXT)";
 
+
+    private int id;
+    private String text;
 
     public Age(int id, String text) {
         this.id = id;

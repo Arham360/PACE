@@ -1,4 +1,4 @@
-#Wed Aug 16 10:47:55 CDT 2017
+#Mon Aug 21 16:02:40 CDT 2017
 file.2=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dace5aef684e614cbc0b8cd3dcc53ed1368a9bb9/classes.dex
 base.2=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dace5aef684e614cbc0b8cd3dcc53ed1368a9bb9
 file.1=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_a2e2648f2097c1672300ec4519fd0a114d793e3e/classes.dex

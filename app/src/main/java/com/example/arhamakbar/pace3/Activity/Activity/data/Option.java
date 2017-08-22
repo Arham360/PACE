@@ -8,16 +8,40 @@ import java.util.Arrays;
 
 public class Option {
 
-    int id;
-    String text;
-    String caption;
-    int age;
-    int type;
-    Integer parent;
-    int[] cases;
-    int[] options;
+    static final String TABLE_NAME = "OPTIONS";
+    static final String COLUMN_ID = "ID";
+    static final String COLUMN_TEXT = "TEXT";
+    static final String COLUMN_CAPTION = "CAPTION";
+    static final String COLUMN_AGE = "AGE";
+    static final String COLUMN_TYPE = "TYPE";
+    static final String COLUMN_PARENT = "PARENT";
+    static final String COLUMN_CASES = "CASES";
+    static final String COLUMN_OPTIONS = "OPTIONS";
+    static final String COLUMNS = "(" + COLUMN_ID + " INTEGER PRIMARY KEY,"
+                                        + COLUMN_TEXT + " TEXT,"
+                                        + COLUMN_CAPTION + " TEXT,"
+                                        + COLUMN_AGE + " INTEGER,"
+                                        + COLUMN_TYPE + " INTEGER,"
+                                        + COLUMN_PARENT + " INTEGER,"
+                                        + COLUMN_CASES+ " TEXT,"
+                                        + COLUMN_OPTIONS + " TEXT)";
 
-    public Option(int id, String text, int age, int type, Integer parent, int[] cases, int[] options,String caption) {
+
+
+
+    private int id;
+    private String text;
+    private String caption;
+    private int age;
+    private int type;
+    private int parent;
+    private int[] cases;
+    private int[] options;
+
+    public Option() {
+    }
+
+    public Option(int id, String text, int age, int type, Integer parent, int[] cases, int[] options, String caption) {
         this.id = id;
         this.text = text;
         this.age = age;
