@@ -6,39 +6,36 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1503432039611"
+    timestamp="1503500014150"
     token="6199453308124412655"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="497" />
+        duration="345" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="7" />
+        duration="6" />
     <task
         name="verifier"
-        duration="7" />
+        duration="1" />
 
     <artifact
-        location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1503431808851"
+        timestamp="1503499775889"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/outputs/apk/app-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
-            location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
@@ -67,21 +64,16 @@
         <artifact
             location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
+        <artifact
+            location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1503431955405"
+        timestamp="1503500014150"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1503432039611"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
     </build>
 

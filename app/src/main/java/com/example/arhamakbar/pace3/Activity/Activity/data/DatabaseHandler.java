@@ -109,6 +109,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cas += ca[i] + ",";
                 //Log.v("OPTIONS","adding" + cas);
             }
+
             ContentValues contentValues = new ContentValues();
             contentValues.put(Option.COLUMN_ID, a);
             contentValues.put(Option.COLUMN_TEXT,t);
@@ -188,6 +189,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             String [] arr = cursor.getString(cursor.getColumnIndexOrThrow(Option.COLUMN_CASES)).split(",");
             for (int i = 0; i<arr.length; i++){
+
                 retlist.add(Integer.parseInt(arr[i]));
             }
         }

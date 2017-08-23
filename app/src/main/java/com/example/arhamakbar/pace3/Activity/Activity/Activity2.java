@@ -56,10 +56,6 @@ public class Activity2 extends AppCompatActivity {
 
 
 
-        if (age <1 || age > 6){
-            Log.v("FUN","ERROR");
-        }
-
 
 
         FragmentManager fm  = getSupportFragmentManager();
@@ -68,8 +64,9 @@ public class Activity2 extends AppCompatActivity {
         if (mainFragment == null){
 
             ArrayList<String> initial = new ArrayList<>();
-            initial.add("Options List (Do not touch)");
+            //initial.add("Options List (Do not touch)");
             //TODO make this untouchable
+            initial.add(title);
             mainFragment = Primary.newInstance( age  ,title, true ,initial);
             fm.beginTransaction().add(R.id.buttonFragment,mainFragment).commit();
 

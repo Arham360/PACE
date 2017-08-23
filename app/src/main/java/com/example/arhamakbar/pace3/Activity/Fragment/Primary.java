@@ -1,5 +1,6 @@
 package com.example.arhamakbar.pace3.Activity.Fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -22,6 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.arhamakbar.pace3.Activity.Activity.Activity2;
+import com.example.arhamakbar.pace3.Activity.Activity.CasesActivity;
 import com.example.arhamakbar.pace3.Activity.Activity.data.DatabaseHandler;
 import com.example.arhamakbar.pace3.Activity.Adapter.DataAdapter;
 import com.example.arhamakbar.pace3.R;
@@ -96,11 +98,11 @@ public class Primary extends Fragment {
             mParam1 = getArguments().getInt(ARG_PARAM1);
             Log.v("PARAM1",""+mParam1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-            Log.v("PARAM2",""+mParam2);
+           // Log.v("PARAM2",""+mParam2);
             mParam3 = getArguments().getBoolean(ARG_PARAM3);
-            Log.v("PARAM3",""+mParam3);
+           // Log.v("PARAM3",""+mParam3);
             mParam4 = getArguments().getStringArrayList(ARG_PARAM4);
-            Log.v("PARAM3",""+mParam4);
+           // Log.v("PARAM3",""+mParam4);
         }
 
 
@@ -112,24 +114,24 @@ public class Primary extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootview = inflater.inflate(R.layout.fragment_primary, container, false);
-        Log.v("LIST", mParam4.toString());
-        try {
-            if (mParam4.get(mParam4.size() - 1).equals(mParam4.get(mParam4.size() - 3))) {
-                Log.v("GOTEM", "just delete the two in the middle");
-                mParam4.remove(mParam4.size()-1);
-                mParam4.remove(mParam4.size()-1);
-                super.onCreateView(inflater,container,savedInstanceState);
-            } else {
-                Log.v("Size small", "dont do nothin");
-            }
-        }catch (Exception e){
-
-        }
+//        Log.v("LIST", mParam4.toString());
+//        try {
+//            if (mParam4.get(mParam4.size() - 1).equals(mParam4.get(mParam4.size() - 3))) {
+//                Log.v("GOTEM", "just delete the two in the middle");
+//                mParam4.remove(mParam4.size()-1);
+//                mParam4.remove(mParam4.size()-1);
+//                super.onCreateView(inflater,container,savedInstanceState);
+//            } else {
+//                Log.v("Size small", "dont do nothin");
+//            }
+//        }catch (Exception e){
+//
+//        }
         for (int i = 0 ; i< mParam4.size();i++) {
             myItems.add(mParam4.get(i));
         }
-        myItems.add(mParam2);
-        mParam4.add(mParam2);
+//        myItems.add(mParam2);
+//        mParam4.add(mParam2);
         Log.v("check ID",""+mParam1);
         ((Activity2) getActivity()).setActionBarTitle(mParam2);
 
@@ -140,14 +142,21 @@ public class Primary extends Fragment {
 //        LinearLayout.setAlignmentMode(LinearLayout.ALIGN_BOUNDS);
 //        LinearLayout.setColumnCount(2);
 //        LinearLayout.setRowCount(3);
+        FragmentManager fm = getFragmentManager();
+
+
+
 
         if(mParam3 == true) {
             createOptionsByAge(mParam1);
         }else{
-
-            if(databaseHandler.getCaseFromOption(mParam1).size()>0){
-
-            }
+           // Log.v("CHECK CASE", databaseHandler.getCaseFromOption(mParam1).toString());
+//            if(databaseHandler.getCaseFromOption(mParam1).get(0)!= -1){
+//
+//                Intent intent  = new Intent((Activity2) getActivity(), CasesActivity.class);
+//                //intent.putExtra(title,"Image Bank");
+//                startActivity(intent);
+//            }
 
             createOptionsByID(mParam1);
         }
@@ -169,15 +178,16 @@ public class Primary extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                FragmentManager fm = getFragmentManager();
+                Log.v("LISTVIEWww", ""+fm.getBackStackEntryCount() + "    " + position);
                 if (position == 0){
                     ((Activity2)getActivity()).finish();
+                }else {
+
+                    fm.popBackStack(position - 1, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 }
-                FragmentManager fm = getFragmentManager();
-                fm.popBackStack(position+1, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
 
-                //TODO WORK ON BACKSTACK FUNCTIONALITY WITH JOEL
             }
         });
 
@@ -230,6 +240,7 @@ public class Primary extends Fragment {
                  public void onClick(View view) {
 
                      //get activity and make new fragment? add it to backstack?
+                     mParam4.add(databaseHandler.getOptionTextById(arrayList.get(a)));
                      ((Activity2) getActivity()).makeNewFragment(arrayList.get(a), text, mParam4);
 
                  }
@@ -257,10 +268,12 @@ public class Primary extends Fragment {
 
     public void createOptionsByID (int id){
         final ArrayList<Integer> arrayList;
-
+        final ArrayList<Integer> TestList;
         //Log.v("TRY",databaseHandler.getOptionTextById(900));
         arrayList = databaseHandler.getOptionById(id);
+        //TestList = databaseHandler.getCaseFromOption(id);
         Log.v("ARRAY",""+arrayList.toString()+"      " + arrayList.size());
+        //Log.v("Cases",""+TestList.toString()+"      " + TestList.size());
         for (int i = 0 ; i< arrayList.size(); i++){
 
             Button myButton1 = new Button(getContext());
@@ -271,6 +284,12 @@ public class Primary extends Fragment {
             //Log.v("getText", databaseHandler.getOptionTextById(i));
             final String text = databaseHandler.getOptionTextById(arrayList.get(i));
             myButton1.setText(text);
+
+            GradientDrawable gd = new GradientDrawable();
+            gd.setColor(0xFF497FFD); // Changes this drawbale to use a single color instead of a gradient
+            gd.setCornerRadius(20);
+            gd.setStroke(1, 0xFF000000);
+            myButton1.setBackgroundDrawable(gd);
 
 //            LinearLayout.LayoutParams param =new LinearLayout.LayoutParams();
 //            param.height = android.widget.LinearLayout.LayoutParams.MATCH_PARENT;
@@ -286,7 +305,10 @@ public class Primary extends Fragment {
                 @Override
                 public void onClick(View view) {
 
+
+
                     //get activity and make new fragment? add it to backstack?
+                    mParam4.add(databaseHandler.getOptionTextById(arrayList.get(a)));
                     ((Activity2) getActivity()).makeNewFragment(arrayList.get(a), text, mParam4);
 
                 }
@@ -298,20 +320,36 @@ public class Primary extends Fragment {
 
     }
 
-    public void popFromList(ArrayList arrayList){
-        arrayList.remove(arrayList.size());
-    }
+
 
     @Override
     public void onPause() {
+       // Log.v("PAUSE", "IM IN PAUSE");
+        FragmentManager fm = getFragmentManager();
+        if (mParam4.size() - fm.getBackStackEntryCount() > 1 ){
+            mParam4.remove(mParam4.size()-1);
+        }
         myItems.clear();
         super.onPause();
     }
 
     @Override
     public void onDetach() {
+       // Log.v("DETACH", "IM IN DETACH");
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onStart() {
+        //Log.v("START", "IM IN START");
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        //Log.v("RESUME", "IM IN RESUME");
+        super.onResume();
     }
 
     /**
