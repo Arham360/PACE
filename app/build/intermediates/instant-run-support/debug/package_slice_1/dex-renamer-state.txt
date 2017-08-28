@@ -1,4 +1,4 @@
-#Mon Aug 21 16:02:41 CDT 2017
-base.0=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1
+#Mon Aug 28 12:51:33 CDT 2017
+base.0=/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1
 renamed.0=classes.dex
-file.0=/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex
+file.0=/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex

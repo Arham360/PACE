@@ -3,5 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="PaceTheme">#497ffd</color>
+    <color name="PaceTheme">#0082c8</color>
+    <color name="Text">#ffffff</color>
 </resources>

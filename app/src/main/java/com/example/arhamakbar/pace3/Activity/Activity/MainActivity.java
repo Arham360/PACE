@@ -2,7 +2,6 @@ package com.example.arhamakbar.pace3.Activity.Activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
@@ -60,77 +59,76 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         String title = "P.A.C.E ";
         ActionBar ab = getSupportActionBar();
         ab.setTitle(title);
-        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF497FFD")));
+        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0082c8")));
 
-        Button b1,b2,b3,b4,b5,b6;
-        b1 = (Button)findViewById(R.id.b1);
-        b2 = (Button)findViewById(R.id.b2);
-        b3 = (Button)findViewById(R.id.b3);
-        b4 = (Button)findViewById(R.id.b4);
-        b5 = (Button)findViewById(R.id.b5);
-        b6 = (Button)findViewById(R.id.b6);
-        Button imageBank = (Button)findViewById(R.id.imageBank);
+        Button b1, b2, b3, b4, b5, b6;
+        b1 = (Button) findViewById(R.id.b1);
+        b2 = (Button) findViewById(R.id.b2);
+        b3 = (Button) findViewById(R.id.b3);
+        b4 = (Button) findViewById(R.id.b4);
+        b5 = (Button) findViewById(R.id.b5);
+        b6 = (Button) findViewById(R.id.b6);
+        Button imageBank = (Button) findViewById(R.id.imageBank);
 
-        b1.setOnClickListener(new View.OnClickListener(){
+        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
-                intent.putExtra("title","0 months to 3 months");
-                intent.putExtra("id",1);
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                intent.putExtra("title", "0 months to 3 months");
+                intent.putExtra("id", 1);
                 startActivity(intent);
             }
         });
-        b2.setOnClickListener(new View.OnClickListener(){
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
-                intent.putExtra("title","3 months to 12 months");
-                intent.putExtra("id",2);
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                intent.putExtra("title", "3 months to 12 months");
+                intent.putExtra("id", 2);
                 startActivity(intent);
             }
         });
-        b3.setOnClickListener(new View.OnClickListener(){
+        b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
-                intent.putExtra("title","12 months to 3 years");
-                intent.putExtra("id",3);
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                intent.putExtra("title", "12 months to 3 years");
+                intent.putExtra("id", 3);
                 startActivity(intent);
             }
         });
-        b4.setOnClickListener(new View.OnClickListener(){
+        b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
-                intent.putExtra("title","3 years to 12 years");
-                intent.putExtra("id",4);
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                intent.putExtra("title", "3 years to 12 years");
+                intent.putExtra("id", 4);
 
                 startActivity(intent);
             }
         });
-        b5.setOnClickListener(new View.OnClickListener(){
+        b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
-                intent.putExtra("title","12 years to 18 years male");
-                intent.putExtra("id",5);
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                intent.putExtra("title", "12 years to 18 years male");
+                intent.putExtra("id", 5);
                 startActivity(intent);
             }
         });
-        b6.setOnClickListener(new View.OnClickListener(){
+        b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
-                intent.putExtra("title","12 years to 18 years female");
-                intent.putExtra("id",6);
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                intent.putExtra("title", "12 years to 18 years female");
+                intent.putExtra("id", 6);
                 startActivity(intent);
             }
         });
-        imageBank.setOnClickListener(new View.OnClickListener(){
+        imageBank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ImageBank.class);
@@ -144,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void init() {
+    private void init() { //currently takes around 7 seconds to initalize fully
 
         final String url = "https://appbrewerydev.uwm.edu/pace/api/v1/init";
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url ,null, new Response.Listener<JSONObject>() {

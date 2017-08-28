@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
-        sha1="5700891c3966ff3b86440710f6ed0d9403f96aad">
-        <dex dex="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_bfecaaf1f0ffd3990cfde245f50b3374f9f39dbb/classes.dex" />
+        sha1="88000292a9ee6e16df8feeb9e136b7dd9f919de2">
+        <dex dex="/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_57e405df4befd8449433b1384e2b561d7deb2445/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4ac532b69e6b507f77f52d953f3fe4debf96aa37/classes.dex" />
+        <dex dex="/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_73aacaa0f7d98bd2055d5c9d487943eaf3cc9a9c/classes.dex" />
     </item>
 
 </items>

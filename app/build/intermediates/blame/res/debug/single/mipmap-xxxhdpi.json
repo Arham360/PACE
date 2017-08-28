@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
-        "source": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
+        "source": "/Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
-        "source": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }
 ]

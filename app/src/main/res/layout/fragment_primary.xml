@@ -15,48 +15,35 @@
         <TextView
             android:id="@+id/captionView"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="What is the patient's primary symptom?"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.26" />
+            app:layout_constraintGuide_percent="0.26"
+            tools:layout_editor_absoluteY="214dp"
+            tools:layout_editor_absoluteX="0dp" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.32" />
-
-        <LinearLayout
-            android:id="@+id/buttonContainer"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:columnCount="2"
-            android:orientation="vertical"
-            android:rowCount="4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2"></LinearLayout>
+            app:layout_constraintGuide_percent="0.32"
+            tools:layout_editor_absoluteY="245dp"
+            tools:layout_editor_absoluteX="0dp" />
 
         <ListView
             android:id="@+id/backStackList"
@@ -71,6 +58,38 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteY="-1dp" />
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <LinearLayout
+                android:id="@+id/buttonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:rowCount="4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"></LinearLayout>
+        </ScrollView>
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

@@ -170,9 +170,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Cursor cursor = myDatabase.rawQuery(selectQuery,null);
         ArrayList<Integer> retlist = new ArrayList<Integer>();
         if (cursor.moveToFirst()) {
-            String [] arr = cursor.getString(cursor.getColumnIndexOrThrow(Option.COLUMN_OPTIONS)).split(",");
-            for (int i = 0; i<arr.length; i++){
-                retlist.add(Integer.parseInt(arr[i]));
+            String[] arr = cursor.getString(cursor.getColumnIndexOrThrow(Option.COLUMN_OPTIONS)).split(",");
+            if (!arr[0].equals("")) {
+                for (int i = 0; i < arr.length; i++) {
+                    retlist.add(Integer.parseInt(arr[i]));
+                }
             }
         }
         cursor.close();
@@ -187,10 +189,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Cursor cursor = myDatabase.rawQuery(selectQuery,null);
         ArrayList<Integer> retlist = new ArrayList<Integer>();
         if (cursor.moveToFirst()) {
-            String [] arr = cursor.getString(cursor.getColumnIndexOrThrow(Option.COLUMN_CASES)).split(",");
-            for (int i = 0; i<arr.length; i++){
+            String[] arr = cursor.getString(cursor.getColumnIndexOrThrow(Option.COLUMN_CASES)).split(",");
+            if (!arr[0].equals("")) {
+                for (int i = 0; i < arr.length; i++) {
 
-                retlist.add(Integer.parseInt(arr[i]));
+                    retlist.add(Integer.parseInt(arr[i]));
+                }
             }
         }
         cursor.close();

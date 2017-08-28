@@ -39,13 +39,13 @@ public class ImageBank extends AppCompatActivity
         databaseHandler = new DatabaseHandler(this);
         mRecyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));//make new layout
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
 
-        ArrayList androidVersions = prepareData();
-        DataAdapter adapter = new DataAdapter(getApplicationContext(),androidVersions);
+        ArrayList diseases = prepareData();
+        DataAdapter adapter = new DataAdapter(getApplicationContext(),diseases);
         mRecyclerView.setAdapter(adapter);
 
     }
@@ -54,21 +54,22 @@ public class ImageBank extends AppCompatActivity
 
         ArrayList ret = new ArrayList<>();
         for(int i=1;i<333;i++){
-
+                //Instantiate a new model
                 ImageBankModel m = new ImageBankModel();
-               // Log.v("image","getting here");
+
+                //fetching the url for the current disease
                 String url = databaseHandler.getCaseImage(i);
 
+                //fetching the name for the current disease
                 String name = databaseHandler.getCaseText(i);
 
+                //ensuring that the url is something that can be processed by picasso
                 if (url != null && url.length()>=1) {
-                    Log.v("image",url+"     ");
-                    Log.v("image",name);
                     m.setDiseaseName(name);
                     m.setDiseaseURL(url);
-                    ret.add(m);
+                    ret.add(m); //adding to the return array for the adapter
                 }
-               // Log.v("image","stuff added");
+
 
         }
         return ret;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.arhamakbar.pace3.Activity.Activity.Activity2">
+    tools:context="com.example.arhamakbar.pace3.Activity.Activity.OptionsActivity">
 
     <FrameLayout
         android:id="@+id/buttonFragment"

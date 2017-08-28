@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
-        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "/Users/arhamakbar/Desktop/PaceApp/Pace3/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/Users/arhamakbar/Desktop/gitpace/PACE/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/arhamakbar/.android/build-cache/f243c7724936ec2074a18b84f8eaec1a5a1fbbb4/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     }
 ]

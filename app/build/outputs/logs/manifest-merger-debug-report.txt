@@ -1,24 +1,24 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:2:1-28:12
 	package
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:3:5-43
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:3:5-43
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:7:5-24:19
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:7:5-26:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/arhamakbar/.android/build-cache/3c4509fdec482b9e9f4f2a581db63a6ee0ef5b5f/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:cardview-v7:25.3.1] /Users/arhamakbar/.android/build-cache/4a04e8cc13119f0d47abc94fffd93d50f99a7822/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.volley:volley:1.0.0] /Users/arhamakbar/.android/build-cache/45a545fb05d43588884040e5711b134c4c9777ea/output/AndroidManifest.xml:9:5-20
@@ -34,45 +34,45 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /Users/arhamakbar/.andr
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/arhamakbar/.android/build-cache/6a5e28089173139fdac9ca80a8e04dac9f6059c9/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /Users/arhamakbar/.android/build-cache/0000ad49e5bf4504bf943ac0f3ca704b47e0a6c8/output/AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:10:9-41
 	android:supportsRtl
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:12:9-35
 	android:roundIcon
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:11:9-54
 	android:allowBackup
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:8:9-35
 	android:icon
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:9:9-43
 	android:theme
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:13:9-40
-activity#com.example.arhamakbar.pace3.Activity.Activity.MainActivity
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:14:9-20:20
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:13:9-40
+activity#com.example.arhamakbar.pace3.Activity.Activity.SplashActivity
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:14:19-65
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:14:19-67
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:15:13-19:29
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:18:17-77
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:18:27-74
-activity#com.example.arhamakbar.pace3.Activity.Activity.Activity2
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:21:9-65
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:18:27-74
+activity#com.example.arhamakbar.pace3.Activity.Activity.MainActivity
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:21:9-22:20
 	android:name
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:21:19-62
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:21:19-65
+activity#com.example.arhamakbar.pace3.Activity.Activity.OptionsActivity
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:23:9-71
+	android:name
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:23:19-68
 activity#com.example.arhamakbar.pace3.Activity.Activity.ImageBank
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:22:9-65
+ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:24:9-65
 	android:name
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:22:19-62
-activity#com.example.arhamakbar.pace3.Activity.Activity.CasesActivity
-ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:23:9-78
-	android:name
-		ADDED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml:23:19-66
+		ADDED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml:24:19-62
 uses-sdk
-INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/arhamakbar/.android/build-cache/3c4509fdec482b9e9f4f2a581db63a6ee0ef5b5f/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:cardview-v7:25.3.1] /Users/arhamakbar/.android/build-cache/4a04e8cc13119f0d47abc94fffd93d50f99a7822/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.volley:volley:1.0.0] /Users/arhamakbar/.android/build-cache/45a545fb05d43588884040e5711b134c4c9777ea/output/AndroidManifest.xml:7:5-43
@@ -91,11 +91,11 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/arhamakbar/.andro
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] /Users/arhamakbar/.android/build-cache/ddb3c023fadc3662f0c4b18e98e5d647b5f183ae/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/arhamakbar/Desktop/PaceApp/Pace3/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/arhamakbar/Desktop/gitpace/PACE/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
 ADDED from [com.android.support:cardview-v7:25.3.1] /Users/arhamakbar/.android/build-cache/4a04e8cc13119f0d47abc94fffd93d50f99a7822/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:design:25.3.1] /Users/arhamakbar/.android/build-cache/ddb3c023fadc3662f0c4b18e98e5d647b5f183ae/output/AndroidManifest.xml:25:5-27:34
